@@ -34,8 +34,8 @@ Application.prototype.start = function () {
   this.tuner.init();
 
   this.$a4.addEventListener("click", function () {
-    swal
-      .fire("Εισαγωγή συχνότητας της Α", { input: "number", inputValue: self.a4 })
+    swal.fire("Εισαγωγή συχνότητας")
+      .fire({input: "number", inputValue: self.a4 })
       .then(function ({ value: a4 }) {
         if (!parseInt(a4) || a4 === self.a4) {
           return;
