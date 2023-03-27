@@ -105,12 +105,12 @@ html {
   right: 0;
   bottom: 50%;
   width: 400px;
-  height: 33%;
+  height: 28%;
   margin: 0 auto 5vh auto;
 }
 
 .meter-pointer {
-  width: 2px;
+  width: 4px;
   height: 100%;
   background: #2c3e50;
   transform: rotate(45deg);
@@ -121,14 +121,14 @@ html {
 }
 
 .meter-dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background: #2c3e50;
   border-radius: 50%;
   position: absolute;
   bottom: -5px;
   right: 50%;
-  margin-right: -4px;
+  margin-right: -5px;
 }
 
 .meter-scale {
@@ -170,6 +170,7 @@ html {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  font-size: 2rem;
 }
 
 .a4 span {
@@ -179,6 +180,17 @@ html {
 
 .auto {
   position: absolute;
-  top: 3rem;
-  left: 1rem;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+#auto-checkbox {
+  width: 1.3rem;
+  aspect-ratio: 1;
+  border: 0 transparent;
+  box-sizing: border-box;
 }
