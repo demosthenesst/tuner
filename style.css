@@ -170,7 +170,7 @@ html {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 .a4 span {
@@ -182,7 +182,7 @@ html {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 2rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: baseline;
   gap: 1rem;
