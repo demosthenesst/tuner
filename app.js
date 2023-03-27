@@ -31,10 +31,10 @@ Application.prototype.start = function () {
       }
     }
   };
-
+    //
     self.tuner.init();
     self.frequencyData = new Uint8Array(self.tuner.analyser.frequencyBinCount);
-
+    //
   this.$a4.addEventListener("click", function () {
     swal
       .fire({ input: "number", inputValue: self.a4 })
