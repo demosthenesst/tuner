@@ -32,14 +32,14 @@ Application.prototype.start = function () {
     }
   };
 
-  swal.fire("Πιέστε για έναρξη").then(function () {
+  swal.fire({title: "Πιέστε για έναρξη", confirmButtonColor: "#5c8958"}).then(function () {
     self.tuner.init();
     self.frequencyData = new Uint8Array(self.tuner.analyser.frequencyBinCount);
   });
 
   this.$a4.addEventListener("click", function () {
     swal
-      .fire({text: 'Επιλέξτε συχνότητα για την Α', input: "number", inputValue: self.a4 })
+      .fire({text: 'Επιλέξτε συχνότητα για την Α', confirmButtonColor: "#5c8958", input: "number", inputValue: self.a4 })
       .then(function ({ value: a4 }) {
         if (!parseInt(a4) || a4 === self.a4) {
           return;
