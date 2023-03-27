@@ -24,7 +24,7 @@ html {
   margin: auto;
   width: 400px;
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 0;
   right: 0;
   text-align: center;
@@ -102,7 +102,7 @@ html {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 50%;
+  bottom: 40%;
   width: 400px;
   height: 28%;
   margin: 0 auto 5vh auto;
@@ -193,3 +193,6 @@ html {
   border: 0 transparent;
   box-sizing: border-box;
 }
+
+
+
