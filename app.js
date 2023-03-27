@@ -3,7 +3,6 @@ const Application = function () {
   this.tuner = new Tuner(this.a4);
   this.notes = new Notes(".notes", this.tuner);
   this.meter = new Meter(".meter");
-  ///////////////////////////////////////// this.frequencyBars = new FrequencyBars(".frequency-bars");
   this.update({
     name: "A",
     frequency: this.a4,
@@ -32,14 +31,7 @@ Application.prototype.start = function () {
     }
   };
 
-  // swal.fire("Welcome to online tuner!").then(function () {
-  //   self.tuner.init();
-  //   self.frequencyData = new Uint8Array(self.tuner.analyser.frequencyBinCount);
-  // });
-
   this.tuner.init();
-
-  //this.frequencyData = new Uint8Array(self.tuner.analyser.frequencyBinCount);
 
   this.$a4.addEventListener("click", function () {
     swal
@@ -63,23 +55,15 @@ Application.prototype.start = function () {
       });
   });
 
-  /////////////////////////////////////////////////  this.updateFrequencyBars();
-
   document.querySelector(".auto input").addEventListener("change", () => {
     this.notes.toggleAutoMode();
   });
 };
-
-//////////////Application.prototype.updateFrequencyBars = function () {
-/////////////  if (this.tuner.analyser) {
-///////////////////////////////////////////////////    this.tuner.analyser.getByteFrequencyData(this.frequencyData);
-/////////////////////////////////////////////////    this.frequencyBars.update(this.frequencyData);
-//////////////////  }
-//////////////  requestAnimationFrame(this.updateFrequencyBars.bind(this));
-//////////////////////////////};
 
 Application.prototype.update = function (note) {
   this.notes.update(note);
   this.meter.update((note.cents / 50) * 45);
 };
 
+const tunerApp = new Application();
+tunerApp.start();
