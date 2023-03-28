@@ -262,7 +262,86 @@ html {
 @media screen and (hover: none) and (pointer: coarse) and (width<= 980px) and (orientation: portrait) and (aspect-ratio > 0.55) {
   
 /* "tab portrait" */
-  
+
+
+.meter {
+  height: 30%;
+  width: 100%;
+}
+
+.a4, .auto  {
+  font-size: 2rem;
+  top: 2rem;
+
+}
+
+.a4  {
+  left: 2rem;
+  top: 2rem;
+
+}
+
+.auto  {
+  right: 1rem;
+  top: 2rem;
+
+}
+
+.frequency {
+  font-size: 3rem;
+
+}
+
+
+/* 
+
+.meter {
+  height: 40%;
+  width: 100%;
+}
+
+
+.notes {
+  width: 60%;
+}
+
+.frequency {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.a4 {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.auto {
+  font-size: 1.5rem;
+  font-weight: 900;
+
+}
+
+.meter-scale {
+  width: 2px;
+}
+
+.meter-scale-strong {
+  width: 4px;
+}
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
 }
 
 
