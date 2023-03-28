@@ -159,16 +159,6 @@ html {
   bottom: 0;
 }
 
-/* @media (max-width: 768px) {
-  .meter {
-    width: 100%;
-  }
-
-  .notes {
-    width: 100%;
-  }
-} */
-
 .swal-button {
   background: #2c3e50;
 }
@@ -181,7 +171,6 @@ html {
   font-weight: 900;
 }
 
-
 @keyframes freq-animation {
   from {
     transform: scale(0.96);
@@ -191,7 +180,6 @@ html {
     transform: scale(1.04);
   }
 }
-
 
 .a4 span {
   display: inline-block;
@@ -225,143 +213,60 @@ html {
 
 /* mqueries */
 
-@media (hover: none) and (pointer: coarse) {
+/* @media (hover: none) and (pointer: coarse) {
 
-/* "tab landscape", general */
+ "tab landscape", general
 
-/* 
-
-
-
-.meter {
-  height: 40%;
-  width: 100%;
-}
-
-.notes {
-  width: 60%;
-}
-
-.frequency {
-  font-size: 2rem;
-  font-weight: 900;
-}
-
-.a4 {
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
-.auto {
-  font-size: 1.5rem;
-  font-weight: 900;
-
-}
-
-.meter-scale {
-  width: 2px;
-}
-
-.meter-scale-strong {
-  width: 4px;
-}
-
-
-*/
-
-}
+} */
 
 @media screen and (hover: none) and (pointer: coarse) and (width<= 1000px) and (orientation: portrait) and (aspect-ratio <= 0.55) {
 
 /* "mobile portrait" */
 
 
-.meter {
-  height: 30%;
-  width: 90%;
-}
+  .meter {
+    height: 30%;
+    width: 90%;
+  }
 
-.auto {
-  position: absolute;
-  top: 3rem;
-  left: 1rem;
-  flex-direction: column;
-}
+  .auto {
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+  }
 
-#auto-checkbox {
-  width: 1.3rem;
-  order: 1;
-  align-self: flex-end;
-}
-
-
-/* 
-
-
-
-.meter {
-  height: 40%;
-  width: 100%;
-}
-
-
-.notes {
-  width: 60%;
-}
-
-.frequency {
-  font-size: 2rem;
-  font-weight: 900;
-}
-
-.a4 {
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
-.auto {
-  font-size: 1.5rem;
-  font-weight: 900;
-
-}
-
-.meter-scale {
-  width: 2px;
-}
-
-.meter-scale-strong {
-  width: 4px;
-}
-
-
-
-*/
-
-
+  #auto-checkbox {
+    width: 1.3rem;
+  }
 
 }
 
 @media (hover: none) and (pointer: coarse) and (width<= 1000px) and (orientation: landscape) {
 
-/* "mobile landscape" */
-  
-.note {
-  font-size: 60px;
-}
+  /* "mobile landscape" */
+    
+  .note {
+    font-size: 60px;
+  }
 
-.note span {
-  right: 0.5em;
-}
+  .note span {
+    right: 0.5em;
+  }
 
 
-.frequency-bars {
-  height: 100%;
-}
+  .frequency-bars {
+    height: 100%;
+  }
 
-.auto {
-  flex-direction: column;
-  justify-content: right;
-}
+  .auto {
+    flex-direction: column;
+  }
+
+
+  #auto-checkbox {
+    order: 1;
+    align-self: flex-end;
+  }
 
 }
 
@@ -370,91 +275,38 @@ html {
 /* "tab portrait" */
 
 
-.meter {
-  height: 30%;
-  width: 100%;
+  .meter {
+    height: 30%;
+    width: 100%;
+  }
+
+
+  .meter-pointer, .meter-scale-strong {
+    width: 6px;
+  }
+
+  .a4, .auto  {
+    font-size: 2rem;
+    top: 2rem;
+
+  }
+
+  .a4  {
+    left: 2rem;
+    top: 2rem;
+
+  }
+
+  .auto  {
+    right: 1rem;
+    top: 2rem;
+
+  }
+
+  .frequency {
+    font-size: 3rem;
+
+  }
 }
-
-
-.meter-pointer, .meter-scale-strong {
-  width: 6px;
-}
-
-.a4, .auto  {
-  font-size: 2rem;
-  top: 2rem;
-
-}
-
-.a4  {
-  left: 2rem;
-  top: 2rem;
-
-}
-
-.auto  {
-  right: 1rem;
-  top: 2rem;
-
-}
-
-.frequency {
-  font-size: 3rem;
-
-}
-
-
-/* 
-
-.meter {
-  height: 40%;
-  width: 100%;
-}
-
-
-.notes {
-  width: 60%;
-}
-
-.frequency {
-  font-size: 2rem;
-  font-weight: 900;
-}
-
-.a4 {
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
-.auto {
-  font-size: 1.5rem;
-  font-weight: 900;
-
-}
-
-.meter-scale {
-  width: 2px;
-}
-
-.meter-scale-strong {
-  width: 4px;
-}
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-}
-
 
 /* !mqueries */
-
