@@ -263,6 +263,10 @@ html {
   left: 1rem;
 }
 
+#auto-checkbox {
+  width: 1rem;
+}
+
 
 /* 
 
@@ -324,6 +328,11 @@ html {
 .meter {
   height: 30%;
   width: 100%;
+}
+
+
+.meter-pointer, .meter-scale-strong {
+  width: 6px;
 }
 
 .a4, .auto  {
