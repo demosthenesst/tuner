@@ -180,16 +180,10 @@ html {
 @keyframes freq-animation {
   from {
     transform: scale(0.96);
-    /* width:0; */
-    /* color: red; */
-    /* font-size: 1.5rem; */
   }
 
   to {
     transform: scale(1.04);
-    /* width:100%; */
-    /* color: green; */
-    /* font-size: 2rem; */
   }
 }
 
