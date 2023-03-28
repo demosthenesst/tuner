@@ -43,6 +43,11 @@ html {
 
 .note.active {
   color: maroon;
+  animation-name: freq-animation;
+  animation-duration: 100ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 }
 
 .notes-list {
@@ -339,6 +344,21 @@ html {
 
 /* "mobile landscape" */
   
+.note {
+  font-size: 60px;
+}
+
+.note span {
+  right: 0.5em;
+}
+
+
+.frequency-bars {
+  height: 70%;
+}
+
+
+
 }
 
 @media screen and (hover: none) and (pointer: coarse) and (width<= 980px) and (orientation: portrait) and (aspect-ratio > 0.55) {
