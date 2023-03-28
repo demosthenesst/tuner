@@ -212,14 +212,12 @@ html {
   font-size: 1.5rem;
   font-weight: 900;
   display: flex;
-  /* align-items: baseline; */
   gap: 1rem;
 }
 
 #auto-checkbox {
   width: 1.5rem;
   aspect-ratio: 1;
-  align-self: center;
   order: -1;
   border: 0 transparent;
   box-sizing: border-box;
@@ -287,10 +285,13 @@ html {
   position: absolute;
   top: 3rem;
   left: 1rem;
+  flex-direction: column;
 }
 
 #auto-checkbox {
   width: 1.3rem;
+  order: 1;
+  align-self: flex-end;
 }
 
 
