@@ -179,23 +179,31 @@ html {
 
 @keyframes freq-animation {
   from {
-    transform: scale(1);
-    width:0;
-    color: red;
+    transform: scale(0.96);
+    /* width:0; */
+    /* color: red; */
+    /* font-size: 1.5rem; */
   }
 
   to {
-    transform: scale(1.1);
-    width:100%;
-    color: green;
+    transform: scale(1.04);
+    /* width:100%; */
+    /* color: green; */
+    /* font-size: 2rem; */
   }
 }
 
 
 .a4 span {
-  color: #e74c3c;
+  display: inline-block;
+  color: maroon;
   cursor: pointer;
-  animation: freq-animation 3s /*timing-function delay iteration-count direction fill-mode*/;
+  animation-name: freq-animation;
+  animation-duration: 100ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+
 }
 
 .auto {
@@ -205,13 +213,15 @@ html {
   font-size: 1.5rem;
   font-weight: 900;
   display: flex;
-  align-items: baseline;
+  /* align-items: baseline; */
   gap: 1rem;
 }
 
 #auto-checkbox {
   width: 1.5rem;
   aspect-ratio: 1;
+  align-self: center;
+  order: -1;
   border: 0 transparent;
   box-sizing: border-box;
 }
