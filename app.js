@@ -34,7 +34,13 @@ Application.prototype.start = function () {
 
   swal.fire({
       title: "Πιέστε για έναρξη",
-      confirmButtonColor: "#5c8958"
+      confirmButtonColor: "#5c8958",
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
     }
     ).then(function () {
     self.tuner.init();
