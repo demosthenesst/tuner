@@ -176,9 +176,26 @@ html {
   font-weight: 900;
 }
 
+
+@keyframes freq-animation {
+  from {
+    transform: scale(1);
+    width:0;
+    color: red;
+  }
+
+  to {
+    transform: scale(1.1);
+    width:100%;
+    color: green;
+  }
+}
+
+
 .a4 span {
   color: #e74c3c;
   cursor: pointer;
+  animation: freq-animation 3s /*timing-function delay iteration-count direction fill-mode*/;
 }
 
 .auto {
@@ -264,7 +281,7 @@ html {
 }
 
 #auto-checkbox {
-  width: 1rem;
+  width: 1.3rem;
 }
 
 
