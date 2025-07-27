@@ -23,8 +23,6 @@ html {
   background-color: var(--bg-color);
 }
 
-/* body * {border: 2px solid red} */
-
 .dark {
   --maroon-clr: sienna;
   background-color: var(--bg-dark);
@@ -39,6 +37,12 @@ html {
   left: 0;
   right: 0;
   text-align: center;
+  z-index: 1;
+  background-color: var(--bg-color);
+}
+
+.dark .notes {
+  background-color: var(--bg-dark);
 }
 
 .note {
