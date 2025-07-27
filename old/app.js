@@ -34,7 +34,7 @@ Application.prototype.start = function () {
 
   swal.fire({
       title: "Πιέστε για έναρξη",
-      confirmButtonColor: "rgb(9, 68, 56)",
+      confirmButtonColor: "#5c8958",
       showClass: {
         popup: 'animate__animated animate__fadeInDown'
       },
@@ -49,7 +49,7 @@ Application.prototype.start = function () {
 
   this.$a4.addEventListener("click", function () {
     swal
-      .fire({text: 'Επιλέξτε συχνότητα για την Α', confirmButtonColor: "rgb(9, 68, 56)", input: "number", inputValue: self.a4 })
+      .fire({text: 'Επιλέξτε συχνότητα για την Α', confirmButtonColor: "#5c8958", input: "number", inputValue: self.a4 })
       .then(function ({ value: a4 }) {
         if (!parseInt(a4) || a4 === self.a4) {
           return;

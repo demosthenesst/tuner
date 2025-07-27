@@ -54,16 +54,46 @@ Tuner.prototype.initGetUserMedia = function () {
   }
 };
 
-Tuner.prototype.init = async function () {
+Tuner.prototype.startRecord = function () {
+  const self = this;
+  navigator.mediaDevices
+    .getUserMedia({ audio: true })
+    .then(function (stream) {
+      self.audioContext.createMediaStreamSource(stream).connect(self.analyser);
+      self.analyser.connect(self.scriptProcessor);
+      self.scriptProcessor.connect(self.audioContext.destination);
+      self.scriptProcessor.addEventListener("audioprocess", function (event) {
+        const frequency = self.pitchDetector.do(
+          event.inputBuffer.getChannelData(0)
+        );
+        if (frequency && self.onNoteDetected) {
+          const note = self.getNote(frequency);
+          self.onNoteDetected({
+            name: self.noteStrings[note % 12],
+            value: note,
+            cents: self.getCents(frequency, note),
+            octave: parseInt(note / 12) - 1,
+            frequency: frequency,
+          });
+        }
+      });
+    })
+    .catch(function (error) {
+      alert(error.name + ": " + error.message);
+    });
+};
+
+Tuner.prototype.init = function () {
   this.audioContext = new window.AudioContext();
   this.analyser = this.audioContext.createAnalyser();
-
-  await this.audioContext.audioWorklet.addModule('pitch-processor.js');
-
-  this.pitchWorklet = new AudioWorkletNode(this.audioContext, 'pitch-processor');
-  this.pitchWorklet.port.postMessage({ command: 'init', sampleRate: this.audioContext.sampleRate });
+  this.scriptProcessor = this.audioContext.createScriptProcessor(
+    this.bufferSize,
+    1,
+     1
+  );
 
   const self = this;
+
   aubio().then(function (aubio) {
     self.pitchDetector = new aubio.Pitch(
       "default",
@@ -71,41 +101,12 @@ Tuner.prototype.init = async function () {
       1,
       self.audioContext.sampleRate
     );
-
-    self.pitchWorklet.port.onmessage = function (event) {
-      const inputBuffer = event.data;
-      const frequency = self.pitchDetector.do(inputBuffer);
-      if (frequency && self.onNoteDetected) {
-        const note = self.getNote(frequency);
-        self.onNoteDetected({
-          name: self.noteStrings[note % 12],
-          value: note,
-          cents: self.getCents(frequency, note),
-          octave: parseInt(note / 12) - 1,
-          frequency: frequency,
-        });
-      }
-    };
-
     self.startRecord();
   });
 };
 
-Tuner.prototype.startRecord = function () {
-  const self = this;
-  navigator.mediaDevices
-    .getUserMedia({ audio: true })
-    .then(function (stream) {
-      const source = self.audioContext.createMediaStreamSource(stream);
-      source.connect(self.analyser);
-      self.analyser.connect(self.pitchWorklet);
-    })
-    .catch(function (error) {
-      alert(error.name + ": " + error.message);
-    });
-};
-
 /**
+ * get musical note from frequency
  *
  * @param {number} frequency
  * @returns {number}
@@ -114,7 +115,9 @@ Tuner.prototype.getNote = function (frequency) {
   const note = 12 * (Math.log(frequency / this.middleA) / Math.log(2));
   return Math.round(note) + this.semitone;
 };
+
 /**
+ * get the musical note's standard frequency
  *
  * @param note
  * @returns {number}
@@ -122,7 +125,9 @@ Tuner.prototype.getNote = function (frequency) {
 Tuner.prototype.getStandardFrequency = function (note) {
   return this.middleA * Math.pow(2, (note - this.semitone) / 12);
 };
+
 /**
+ * get cents difference between given frequency and musical note's standard frequency
  *
  * @param {number} frequency
  * @param {number} note
@@ -135,6 +140,8 @@ Tuner.prototype.getCents = function (frequency, note) {
 };
 
 /**
+ * play the musical note
+ *
  * @param {number} frequency
  */
 Tuner.prototype.play = function (frequency) {

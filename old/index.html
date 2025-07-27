@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="style.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
-
   </head>
   <body>
 
@@ -28,37 +25,20 @@
           <span>Hz</span>
         </div>
       </div>
-
-      <div class="container">
-        <div class="a4">A<sub>4</sub> = <span>440</span> Hz</div>
-        <label class="auto">
-          <div>Αυτόματη εισαγωγή</div>
-          <input type="checkbox" checked id="auto-checkbox" />
-        </label>
-      </div>
-
-      <!-- <div class="a4">A<sub>4</sub> = <span>440</span> Hz</div>
+      <div class="a4">A<sub>4</sub> = <span>440</span> Hz</div>
       <label class="auto">
         <div>Αυτόματη εισαγωγή</div>
         <input type="checkbox" checked id="auto-checkbox" />
-      </label> -->
+      </label>
 
   </body>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://cdn.jsdelivr.net/npm/aubiojs@0.1.1/build/aubio.min.js"></script>
-  
   <script src="tuner.js"></script>
   <script src="meter.js"></script>
   <script src="frequency-bars.js"></script>
   <script src="notes.js"></script>
   <script src="app.js"></script>
 
-  <script>
-        const now = new Date();
-        //if (now.getHours() >= 12 ) {
-    if (now.getHours() >= 20 || now.getHours()<=6 ) {
-      document.body.classList.add('dark');
-    }
-  </script>
   </html>
